@@ -1,5 +1,5 @@
 // Types TypeScript pour Annuaire Bergerac
-// Export complet du 05/10/2025 17:38:21
+// Export complet du 05/10/2025 17:43:55
 
 export type Page = 
   | 'home' | 'blog' | 'blog-article' | 'blog-editor'

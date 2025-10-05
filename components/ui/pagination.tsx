@@ -1,6 +1,6 @@
 // shadcn/ui pagination.tsx
 // Configuré pour Annuaire Bergerac
-// Export du 05/10/2025 17:38:21
+// Export du 05/10/2025 17:43:55
 
 import React from 'react';
 import { cn } from './utils';
