@@ -1,5 +1,5 @@
 // PricingPage - Composant principal Annuaire Bergerac
-// Exporté le 05/10/2025 10:59:40
+// Exporté le 05/10/2025 11:10:04
 
 import React from 'react';
 

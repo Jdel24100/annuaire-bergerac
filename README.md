@@ -42,4 +42,4 @@ vercel --prod
 ### Autres hébergeurs
 Build dans `dist/` prêt pour serveur web statique.
 
-Exporté le 05/10/2025 10:59:40 depuis l'interface admin.
+Exporté le 05/10/2025 11:10:04 depuis l'interface admin.
