@@ -19,6 +19,7 @@ import { LegalPages } from './components/LegalPages';
 import { AboutPage } from './components/AboutPage';
 import { ListingEditor } from './components/ListingEditor';
 import { NotFoundPage } from './components/NotFoundPage';
+import { StyleDiagnostic } from './components/StyleDiagnostic';
 import { ProfilePage } from './components/ProfilePage';
 import { DebugPage } from './components/DebugPage';
 import { Page } from './types';
@@ -121,6 +122,9 @@ export default function App() {
       
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
+      
+      case 'style-diagnostic':
+        return <StyleDiagnostic />;
       
       case 'listing-editor':
         return <ListingEditor onNavigate={handleNavigate} listingId={pageParams?.id} />;
