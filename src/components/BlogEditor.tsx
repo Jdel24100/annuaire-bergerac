@@ -10,7 +10,7 @@ import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Switch } from './ui/switch';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { Page, BlogArticle, BlogCategory, BlogTag } from '../types';
 
 interface BlogEditorProps {

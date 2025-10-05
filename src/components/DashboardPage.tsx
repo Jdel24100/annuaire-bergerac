@@ -13,7 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Label } from './ui/label';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Separator } from './ui/separator';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { SubscriptionManager } from './SubscriptionManager';
 import { InvoiceManager } from './InvoiceManager';
 import { TwoFactorAuth } from './TwoFactorAuth';

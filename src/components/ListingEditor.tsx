@@ -11,7 +11,7 @@ import { Separator } from './ui/separator';
 import { Switch } from './ui/switch';
 import { Alert, AlertDescription } from './ui/alert';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { categories } from './mockData';
 import { Page, ProfessionalListing, OpeningHours, DaySchedule } from '../types';
 

@@ -13,7 +13,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from './ui/dialog';
 import { Separator } from './ui/separator';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { GeneratedInvoice } from '../types';
 
 interface InvoiceManagerProps {

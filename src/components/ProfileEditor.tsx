@@ -1,6 +1,6 @@
 import React from 'react';
 import { Save, Upload, X, User, Mail, Phone, MapPin, Calendar, Camera, Eye, EyeOff } from 'lucide-react';
-import { FixedImageUpload } from './FixedImageUpload';
+import { ImageUpload } from './ImageUpload';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Badge } from './ui/badge';
 import { Separator } from './ui/separator';
 import { Alert, AlertDescription } from './ui/alert';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { User as UserType } from '../types';
 
 interface ProfileEditorProps {
@@ -223,18 +223,12 @@ export function ProfileEditor({ onSave, onCancel }: ProfileEditorProps) {
               {/* Upload nouvelle photo */}
               <div>
                 <h4 className="font-medium mb-4">Nouvelle photo</h4>
-                <FixedImageUpload
+                <ImageUpload
                   value={profileData.avatar}
                   onChange={handleAvatarChange}
                   variant="avatar"
                   placeholder="Ajouter une photo de profil"
                   className="h-32"
-                  options={{
-                    maxSize: 2 * 1024 * 1024, // 2MB pour un avatar
-                    maxWidth: 500,
-                    maxHeight: 500,
-                    quality: 0.9
-                  }}
                 />
               </div>
             </div>

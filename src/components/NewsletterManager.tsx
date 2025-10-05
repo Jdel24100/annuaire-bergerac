@@ -17,7 +17,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Label } from './ui/label';
 import { Switch } from './ui/switch';
 import { Alert, AlertDescription } from './ui/alert';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { NewsletterSubscriber, NewsletterCampaign, NewsletterSegment, BrevoConfig } from '../types';
 
 interface NewsletterManagerProps {

@@ -11,7 +11,7 @@ import { Label } from './ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { AdBanner } from './AdBanner';
 import { FAQ } from './FAQ';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { mockBlogArticles, blogCategories, blogTags } from './mockData';
 import { Page, BlogArticle } from '../types';
 

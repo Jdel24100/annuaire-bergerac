@@ -169,6 +169,7 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
+    --container-xs: 20rem;
     --container-sm: 24rem;
     --container-md: 28rem;
     --container-lg: 32rem;
@@ -1706,6 +1707,10 @@
     max-width: none;
   }
 
+  .max-w-xs {
+    max-width: var(--container-xs);
+  }
+
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
   }
@@ -1805,6 +1810,10 @@
 
   .cursor-default {
     cursor: default;
+  }
+
+  .cursor-not-allowed {
+    cursor: not-allowed;
   }
 
   .cursor-pointer {
@@ -2153,6 +2162,10 @@
     border-color: currentColor;
   }
 
+  .border-destructive {
+    border-color: var(--destructive);
+  }
+
   .border-destructive\/20 {
     border-color: var(--destructive);
   }
@@ -2181,6 +2194,10 @@
 
   .border-input {
     border-color: var(--input);
+  }
+
+  .border-muted {
+    border-color: var(--muted);
   }
 
   .border-orange-200 {
@@ -2391,6 +2408,16 @@
 
   .bg-muted {
     background-color: var(--muted);
+  }
+
+  .bg-muted\/20 {
+    background-color: var(--muted);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-muted\/20 {
+      background-color: color-mix(in oklab, var(--muted) 20%, transparent);
+    }
   }
 
   .bg-muted\/30 {
@@ -3315,6 +3342,10 @@
     text-underline-offset: 4px;
   }
 
+  .opacity-0 {
+    opacity: 0;
+  }
+
   .opacity-10 {
     opacity: .1;
   }
@@ -3520,6 +3551,12 @@
     }
   }
 
+  @media (hover: hover) {
+    .group-hover\:opacity-100:is(:where(.group):hover *) {
+      opacity: 1;
+    }
+  }
+
   .group-data-\[disabled\=true\]\:pointer-events-none:is(:where(.group)[data-disabled="true"] *) {
     pointer-events: none;
   }
@@ -3614,6 +3651,12 @@
   @media (hover: hover) {
     .hover\:border-pink-200:hover {
       border-color: var(--color-pink-200);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:border-primary:hover {
+      border-color: var(--primary);
     }
   }
 

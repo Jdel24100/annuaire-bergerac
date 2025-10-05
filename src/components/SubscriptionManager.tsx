@@ -14,7 +14,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, Di
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { UserSubscription, Invoice, SubscriptionPlan } from '../types';
 
 interface SubscriptionManagerProps {

@@ -15,7 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from './ui/dialog';
 import { Label } from './ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { Feedback, FeedbackCategory } from '../types';
 
 interface FeedbackManagerProps {

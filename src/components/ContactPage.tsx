@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from './ui/alert';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 
 import { Badge } from './ui/badge';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { useSafeCaptchaWrapper } from './SafeCaptchaWrapper';
 import { Page, Feedback, FeedbackCategory } from '../types';
 
