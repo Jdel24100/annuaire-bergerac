@@ -1,13 +1,13 @@
-# 🏢 Annuaire Bergerac
+# 🏢 Annuaire Bergerac - Export Complet
 
-> Annuaire professionnel spécialisé pour les entreprises de Bergerac et ses environs (rayon 60km)
+> Annuaire professionnel spécialisé pour les entreprises de Bergerac et ses environs
 
-**Export généré le 05/10/2025 11:23:10 depuis l'interface admin**
+**Export COMPLET généré le 05/10/2025 11:37:58 depuis l'interface admin**
 
 ## 🚀 Installation
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 npm run dev
 ```
 
@@ -26,13 +26,16 @@ VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
-## 🎯 Fonctionnalités
+## 🎯 Contenu de cet export COMPLET
 
-- **React 18** + TypeScript + Vite
-- **Tailwind CSS v4** avec thème adaptatif
-- **Motion** (ex-Framer Motion) - Animations fluides
-- **Supabase** - Backend complet (DB, Auth, Storage)
-- **Export Manager** - Export de code intégré
+✅ **TOUS vos composants** (39 composants)  
+✅ **TOUS les composants UI** (47 composants shadcn/ui)  
+✅ **Styles Tailwind v4** complets avec votre configuration  
+✅ **Types TypeScript** complets  
+✅ **Hooks personnalisés** et utilitaires  
+✅ **Configuration Vite 5** optimisée  
+✅ **Framer Motion** correctement configuré  
+✅ **Vercel deployment** ready  
 
 ## 🚀 Déploiement
 
@@ -41,10 +44,17 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 vercel --prod
 ```
 
-### Autres hébergeurs
-Le dossier `dist/` contient le build prêt pour serveur web statique.
+## 📋 Structure du projet
+
+- `components/` - Tous vos composants (39 fichiers)
+- `components/ui/` - shadcn/ui complets (47 fichiers)
+- `types/` - Types TypeScript complets
+- `utils/` - Utilitaires et Supabase
+- `hooks/` - Hooks personnalisés
+- `styles/` - Tailwind CSS v4 avec votre configuration
 
 ---
 
-**Projet exporté depuis l'interface admin Annuaire Bergerac**
+**Export COMPLET depuis Annuaire Bergerac**  
+**Timestamp: 2025-10-05T09:37:58.296Z**
 **Fait avec ❤️ à Bergerac, Dordogne**

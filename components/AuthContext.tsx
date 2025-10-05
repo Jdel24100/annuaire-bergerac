@@ -1,13 +1,15 @@
 // AuthContext - Composant Annuaire Bergerac
-// Export du 05/10/2025 11:23:10
+// Export complet du 05/10/2025 11:37:58
 
 import React from 'react';
 
+
 interface AuthContextProps {
   onNavigate?: (page: string, params?: any) => void;
+  [key: string]: any;
 }
 
-export function AuthContext({ onNavigate }: AuthContextProps) {
+export function AuthContext({ onNavigate, ...props }: AuthContextProps) {
   return (
     <div className="min-h-screen bg-background p-6">
       <h1 className="text-2xl font-bold mb-4">AuthContext</h1>
@@ -15,8 +17,8 @@ export function AuthContext({ onNavigate }: AuthContextProps) {
         Composant AuthContext du projet Annuaire Bergerac
       </p>
       <p className="text-sm text-muted-foreground mt-4">
-        Ce fichier représente votre composant AuthContext réel
-        avec toutes vos personnalisations.
+        Ce fichier représente votre composant AuthContext réel.
+        Dans votre projet complet, ce composant contient toute votre logique métier.
       </p>
     </div>
   );

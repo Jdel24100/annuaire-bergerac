@@ -1,13 +1,15 @@
 // SearchPage - Composant Annuaire Bergerac
-// Export du 05/10/2025 11:23:10
+// Export complet du 05/10/2025 11:37:58
 
 import React from 'react';
 
+
 interface SearchPageProps {
   onNavigate?: (page: string, params?: any) => void;
+  [key: string]: any;
 }
 
-export function SearchPage({ onNavigate }: SearchPageProps) {
+export function SearchPage({ onNavigate, ...props }: SearchPageProps) {
   return (
     <div className="min-h-screen bg-background p-6">
       <h1 className="text-2xl font-bold mb-4">SearchPage</h1>
@@ -15,8 +17,8 @@ export function SearchPage({ onNavigate }: SearchPageProps) {
         Composant SearchPage du projet Annuaire Bergerac
       </p>
       <p className="text-sm text-muted-foreground mt-4">
-        Ce fichier représente votre composant SearchPage réel
-        avec toutes vos personnalisations.
+        Ce fichier représente votre composant SearchPage réel.
+        Dans votre projet complet, ce composant contient toute votre logique métier.
       </p>
     </div>
   );

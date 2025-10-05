@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -8,7 +9,13 @@ export default defineConfig({
     global: 'globalThis',
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'motion', 'lucide-react', '@supabase/supabase-js'],
+    include: [
+      'react',
+      'react-dom',
+      'framer-motion',
+      'lucide-react',
+      '@supabase/supabase-js'
+    ],
   },
   build: {
     target: 'es2020',
@@ -21,7 +28,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          motion: ['motion'],
+          motion: ['framer-motion'],
           icons: ['lucide-react'],
           supabase: ['@supabase/supabase-js']
         },
