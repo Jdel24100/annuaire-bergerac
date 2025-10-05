@@ -1,34 +1,45 @@
-# 🏪 Annuaire Bergerac
+# 🏢 Annuaire Bergerac
 
-L'annuaire professionnel de référence pour Bergerac et ses environs.
+> Annuaire professionnel spécialisé pour les entreprises de Bergerac et ses alentours (rayon 60km)
 
-## 🚀 Démarrage rapide
+## 🚀 Installation
 
 ```bash
 npm install
 npm run dev
 ```
 
-## 📦 Technologies
+## 📦 Build
 
-- React 18 + TypeScript
-- Vite + Tailwind CSS v4  
-- Motion (Framer Motion)
-- Supabase + Radix UI
+```bash
+npm run build
+npm run preview
+```
 
-## 🌐 Déploiement
+## 🔧 Configuration
+
+Variables d'environnement dans `.env` :
+```
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
+
+## 🏗 Architecture
+
+- **React 18** + TypeScript + Vite
+- **Tailwind CSS v4** + Motion
+- **shadcn/ui** + Radix UI
+- **Supabase** Backend + Auth
+- **Export Manager** intégré
+
+## 🚀 Déploiement
 
 ### Vercel
-1. Connectez votre repo à Vercel
-2. Variables d'environnement requises
-3. Déployez automatiquement
-
-### Variables d'environnement
-```
-VITE_SUPABASE_URL=https://zkmsegawmokujifugpwm.supabase.co
-VITE_SUPABASE_ANON_KEY=your-key
-VITE_GOOGLE_RECAPTCHA_SITE_KEY=your-key
+```bash
+vercel --prod
 ```
 
----
-© 2025 Annuaire Bergerac
+### Autres hébergeurs
+Build dans `dist/` prêt pour serveur web statique.
+
+Exporté le 05/10/2025 10:59:40 depuis l'interface admin.

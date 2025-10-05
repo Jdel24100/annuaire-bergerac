@@ -30,6 +30,7 @@ export default function App() {
   const handleNavigate = (page: Page, params?: any) => {
     setCurrentPage(page);
     setPageParams(params || null);
+    // Scroll to top when navigating
     window.scrollTo(0, 0);
   };
 
@@ -37,56 +38,80 @@ export default function App() {
     switch (currentPage) {
       case 'home':
         return <HomePage onNavigate={handleNavigate} />;
+      
       case 'blog':
         return <BlogPage onNavigate={handleNavigate} />;
+      
       case 'blog-article':
         return <BlogPage onNavigate={handleNavigate} articleId={pageParams?.id} />;
+        
       case 'blog-editor':
         return <BlogEditor onNavigate={handleNavigate} articleId={pageParams?.id} />;
+      
       case 'directory':
         return <DirectoryPage onNavigate={handleNavigate} />;
+      
       case 'directory-listing':
         return <DirectoryPage onNavigate={handleNavigate} listingId={pageParams?.id} />;
+      
       case 'search':
         return <SearchPage onNavigate={handleNavigate} initialQuery={pageParams?.query} initialCategory={pageParams?.category} />;
+      
       case 'dashboard':
         return <DashboardPage onNavigate={handleNavigate} />;
+      
       case 'admin':
         return <AdminPage onNavigate={handleNavigate} />;
+        
       case 'pricing':
         return <PricingPage onNavigate={handleNavigate} />;
+        
       case 'trash':
         return <TrashPage onNavigate={handleNavigate} />;
+      
       case 'login':
         return <AuthPages type="login" onNavigate={handleNavigate} />;
+      
       case 'register':
         return <AuthPages type="register" onNavigate={handleNavigate} />;
+      
       case 'contact':
         return <ContactPage onNavigate={handleNavigate} />;
+      
       case 'feedback':
         return <ContactPage onNavigate={handleNavigate} />;
+      
       case 'legal':
         return <LegalPages onNavigate={handleNavigate} pageType="legal" />;
+      
       case 'privacy':
         return <LegalPages onNavigate={handleNavigate} pageType="privacy" />;
+      
       case 'terms':
         return <LegalPages onNavigate={handleNavigate} pageType="terms" />;
+      
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
+      
       case 'listing-editor':
         return <ListingEditor onNavigate={handleNavigate} listingId={pageParams?.id} />;
+      
       case 'profile':
         return <ProfilePage onNavigate={handleNavigate} />;
+      
       case 'debug':
         return <DebugPage onNavigate={handleNavigate} />;
+      
       case '404':
         return <NotFoundPage onNavigate={handleNavigate} requestedPath={pageParams?.path} />;
+      
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }
   };
 
   const showNavigation = !['login', 'register'].includes(currentPage);
+  const showFooter = showNavigation && !['admin'].includes(currentPage);
 
   return (
     <ThemeProvider defaultTheme="light" storageKey="annuaire-bergerac-theme">
@@ -109,7 +134,8 @@ export default function App() {
           </AnimatePresence>
         </main>
         
-        {showNavigation && (
+        {/* Footer - Style Figma */}
+        {showFooter && (
           <footer className="bg-muted/50 mt-20">
             <div className="max-w-[1400px] mx-auto px-4 py-12">
               <div className="grid md:grid-cols-4 gap-8">
