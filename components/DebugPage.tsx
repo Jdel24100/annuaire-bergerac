@@ -1,5 +1,5 @@
 // DebugPage.tsx - Composant Annuaire Bergerac (RÉEL)
-// Export du 05/10/2025 18:27:52
+// Export du 05/10/2025 18:31:39
 // ATTENTION: Contenu de fallback - remplacez par votre code réel
 
 import React from 'react';

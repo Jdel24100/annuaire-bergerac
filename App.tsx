@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { AuthProvider } from './components/AuthContext';
 import { ThemeProvider } from './components/ThemeProvider';
 import { CaptchaProvider } from './components/CaptchaContext';

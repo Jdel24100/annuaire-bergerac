@@ -2,7 +2,7 @@
 
 > Export AUTHENTIQUE avec TOUS vos composants réels
 
-**Export généré le 05/10/2025 18:27:55**
+**Export généré le 05/10/2025 18:31:50**
 
 ## 🎯 Contenu de cet export
 
@@ -54,5 +54,5 @@ npm run preview
 
 **Export AUTHENTIQUE depuis Annuaire Bergerac**  
 **47 composants réels exportés**
-**Timestamp: 2025-10-05T16:27:55.383Z**
+**Timestamp: 2025-10-05T16:31:50.177Z**
 **Fait avec ❤️ à Bergerac, Dordogne**
