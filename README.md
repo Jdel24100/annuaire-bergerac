@@ -1,6 +1,8 @@
 # 🏢 Annuaire Bergerac
 
-> Annuaire professionnel spécialisé pour les entreprises de Bergerac et ses alentours (rayon 60km)
+> Annuaire professionnel spécialisé pour les entreprises de Bergerac et ses environs (rayon 60km)
+
+**Export généré le 05/10/2025 11:23:10 depuis l'interface admin**
 
 ## 🚀 Installation
 
@@ -9,7 +11,7 @@ npm install
 npm run dev
 ```
 
-## 📦 Build
+## 📦 Build de production
 
 ```bash
 npm run build
@@ -24,22 +26,25 @@ VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
-## 🏗 Architecture
+## 🎯 Fonctionnalités
 
 - **React 18** + TypeScript + Vite
-- **Tailwind CSS v4** + Motion
-- **shadcn/ui** + Radix UI
-- **Supabase** Backend + Auth
-- **Export Manager** intégré
+- **Tailwind CSS v4** avec thème adaptatif
+- **Motion** (ex-Framer Motion) - Animations fluides
+- **Supabase** - Backend complet (DB, Auth, Storage)
+- **Export Manager** - Export de code intégré
 
 ## 🚀 Déploiement
 
-### Vercel
+### Vercel (recommandé)
 ```bash
 vercel --prod
 ```
 
 ### Autres hébergeurs
-Build dans `dist/` prêt pour serveur web statique.
+Le dossier `dist/` contient le build prêt pour serveur web statique.
 
-Exporté le 05/10/2025 11:10:04 depuis l'interface admin.
+---
+
+**Projet exporté depuis l'interface admin Annuaire Bergerac**
+**Fait avec ❤️ à Bergerac, Dordogne**

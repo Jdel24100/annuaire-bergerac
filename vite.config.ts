@@ -4,21 +4,40 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  define: {
+    global: 'globalThis',
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'motion', 'lucide-react', '@supabase/supabase-js'],
+  },
   build: {
     target: 'es2020',
     outDir: 'dist',
+    assetsDir: 'assets',
     minify: 'esbuild',
+    sourcemap: false,
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-          motion: ['motion']
-        }
-      }
-    }
+          motion: ['motion'],
+          icons: ['lucide-react'],
+          supabase: ['@supabase/supabase-js']
+        },
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
+      },
+    },
+    chunkSizeWarningLimit: 1500,
   },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'motion']
+  server: {
+    port: 3000,
+    host: true,
+  },
+  preview: {
+    port: 4173,
+    host: true,
   }
 })
