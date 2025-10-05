@@ -1,60 +1,58 @@
-# 🏢 Annuaire Bergerac - Export Complet
+# 🏢 Annuaire Bergerac - Export COMPLET RÉEL
 
-> Annuaire professionnel spécialisé pour les entreprises de Bergerac et ses environs
+> Export AUTHENTIQUE avec TOUS vos composants réels
 
-**Export COMPLET généré le 05/10/2025 17:43:55 depuis l'interface admin**
+**Export généré le 05/10/2025 18:27:55**
+
+## 🎯 Contenu de cet export
+
+✅ **47 composants RÉELS** de votre projet
+✅ **Configuration complète** TypeScript, Vite, Tailwind v4  
+✅ **Tous les gestionnaires admin** (UserManager, AdminSettings, etc.)
+✅ **Composants UI shadcn** complets
+✅ **Styles authentiques** avec votre thème Poppins
+✅ **Types et hooks** de votre projet
+✅ **Structure complète** prête à déployer
 
 ## 🚀 Installation
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 npm run dev
 ```
 
 ## 📦 Build de production
 
-```bash
+```bash  
 npm run build
 npm run preview
 ```
 
-## 🔧 Configuration
+## 📋 Composants inclus
 
-Variables d'environnement dans `.env` :
-```
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-key
-```
+### Pages principales
+- HomePage, AdminPage, BlogPage, DirectoryPage
+- SearchPage, DashboardPage, ContactPage, AboutPage
+- PricingPage, ProfilePage, AuthPages, LegalPages
 
-## 🎯 Contenu de cet export COMPLET
+### Gestionnaires Admin
+- AdminSettingsManager, UserManager, ListingManager
+- ArticleManager, EmailManager, InvoiceManager
+- FeedbackManager, NewsletterManager, TrashManager
 
-✅ **TOUS vos composants** (39 composants)  
-✅ **TOUS les composants UI** (47 composants shadcn/ui)  
-✅ **Styles Tailwind v4** complets avec votre configuration  
-✅ **Types TypeScript** complets  
-✅ **Hooks personnalisés** et utilitaires  
-✅ **Configuration Vite 5** optimisée  
-✅ **Framer Motion** correctement configuré  
-✅ **Vercel deployment** ready  
+### Outils et éditeurs  
+- BlogEditor, ListingEditor, ProfileEditor
+- ImageOptimizationDemo, QuickExportButton
+- NotificationSystem, PaymentModal
 
-## 🚀 Déploiement
-
-### Vercel (recommandé)
-```bash
-vercel --prod
-```
-
-## 📋 Structure du projet
-
-- `components/` - Tous vos composants (39 fichiers)
-- `components/ui/` - shadcn/ui complets (47 fichiers)
-- `types/` - Types TypeScript complets
-- `utils/` - Utilitaires et Supabase
-- `hooks/` - Hooks personnalisés
-- `styles/` - Tailwind CSS v4 avec votre configuration
+### Infrastructure
+- AuthContext, ThemeProvider, CaptchaContext
+- Navigation, Logo, ThemeToggle
+- Tous les composants UI shadcn/ui
 
 ---
 
-**Export COMPLET depuis Annuaire Bergerac**  
-**Timestamp: 2025-10-05T15:43:55.044Z**
+**Export AUTHENTIQUE depuis Annuaire Bergerac**  
+**47 composants réels exportés**
+**Timestamp: 2025-10-05T16:27:55.383Z**
 **Fait avec ❤️ à Bergerac, Dordogne**

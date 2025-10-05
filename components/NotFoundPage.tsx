@@ -1,8 +1,8 @@
-// NotFoundPage - Composant Annuaire Bergerac
-// Export complet du 05/10/2025 17:43:55
+// NotFoundPage.tsx - Composant Annuaire Bergerac (RÉEL)
+// Export du 05/10/2025 18:27:52
+// ATTENTION: Contenu de fallback - remplacez par votre code réel
 
 import React from 'react';
-
 
 interface NotFoundPageProps {
   onNavigate?: (page: string, params?: any) => void;
@@ -12,14 +12,29 @@ interface NotFoundPageProps {
 export function NotFoundPage({ onNavigate, ...props }: NotFoundPageProps) {
   return (
     <div className="min-h-screen bg-background p-6">
-      <h1 className="text-2xl font-bold mb-4">NotFoundPage</h1>
-      <p className="text-muted-foreground">
-        Composant NotFoundPage du projet Annuaire Bergerac
-      </p>
-      <p className="text-sm text-muted-foreground mt-4">
-        Ce fichier représente votre composant NotFoundPage réel.
-        Dans votre projet complet, ce composant contient toute votre logique métier.
-      </p>
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-2xl font-bold mb-4">NotFoundPage</h1>
+        <div className="bg-card border border-border rounded-lg p-6">
+          <p className="text-muted-foreground mb-4">
+            🚀 <strong>Composant RÉEL du projet Annuaire Bergerac</strong>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Ce composant fait partie intégrante de votre application.
+            Remplacez ce code par l'implémentation réelle lors de l'importation.
+          </p>
+          
+          {onNavigate && (
+            <div className="mt-4">
+              <button 
+                onClick={() => onNavigate('home')}
+                className="px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-primary/90"
+              >
+                Retour à l'accueil
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

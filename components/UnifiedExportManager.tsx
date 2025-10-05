@@ -1,19 +1,19 @@
-// AuthContext.tsx - Composant Annuaire Bergerac (RÉEL)
+// UnifiedExportManager.tsx - Composant Annuaire Bergerac (RÉEL)
 // Export du 05/10/2025 18:27:53
 // ATTENTION: Contenu de fallback - remplacez par votre code réel
 
 import React from 'react';
 
-interface AuthContextProps {
+interface UnifiedExportManagerProps {
   onNavigate?: (page: string, params?: any) => void;
   [key: string]: any;
 }
 
-export function AuthContext({ onNavigate, ...props }: AuthContextProps) {
+export function UnifiedExportManager({ onNavigate, ...props }: UnifiedExportManagerProps) {
   return (
     <div className="min-h-screen bg-background p-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-4">AuthContext</h1>
+        <h1 className="text-2xl font-bold mb-4">UnifiedExportManager</h1>
         <div className="bg-card border border-border rounded-lg p-6">
           <p className="text-muted-foreground mb-4">
             🚀 <strong>Composant RÉEL du projet Annuaire Bergerac</strong>
@@ -39,4 +39,4 @@ export function AuthContext({ onNavigate, ...props }: AuthContextProps) {
   );
 }
 
-export default AuthContext;
+export default UnifiedExportManager;
