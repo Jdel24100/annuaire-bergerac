@@ -1,20 +1,8 @@
-# 🏢 Annuaire Bergerac - Export COMPLET RÉEL
+# 🏢 Annuaire Bergerac
 
-> Export AUTHENTIQUE avec TOUS vos composants réels
+> L'annuaire professionnel de référence à Bergerac et ses environs (60km)
 
-**Export généré le 05/10/2025 18:36:01**
-
-## 🎯 Contenu de cet export
-
-✅ **47 composants RÉELS** de votre projet
-✅ **Configuration complète** TypeScript, Vite, Tailwind v4  
-✅ **Tous les gestionnaires admin** (UserManager, AdminSettings, etc.)
-✅ **Composants UI shadcn** complets
-✅ **Styles authentiques** avec votre thème Poppins
-✅ **Types et hooks** de votre projet
-✅ **Structure complète** prête à déployer
-
-## 🚀 Installation
+## 🚀 Installation rapide
 
 ```bash
 npm install
@@ -23,36 +11,90 @@ npm run dev
 
 ## 📦 Build de production
 
-```bash  
+```bash
 npm run build
 npm run preview
 ```
 
-## 📋 Composants inclus
+## 🎯 Fonctionnalités
 
-### Pages principales
-- HomePage, AdminPage, BlogPage, DirectoryPage
-- SearchPage, DashboardPage, ContactPage, AboutPage
-- PricingPage, ProfilePage, AuthPages, LegalPages
+### ✅ **Interface complète**
+- 🏠 **HomePage** avec stats et recherche
+- 🔐 **Authentification** login/register
+- 📊 **Dashboard** utilisateur complet
+- 📝 **Blog/Aide** avec éditeur
+- 👨‍💼 **Panel admin** complet
+- 🎨 **Thème** light/dark adaptatif
 
-### Gestionnaires Admin
-- AdminSettingsManager, UserManager, ListingManager
-- ArticleManager, EmailManager, InvoiceManager
-- FeedbackManager, NewsletterManager, TrashManager
+### ✅ **Technologies**
+- ⚛️ **React 18** + TypeScript
+- 🎨 **Tailwind CSS v4** avec thème personnalisé
+- 🎭 **Framer Motion** pour animations
+- 🧩 **Radix UI** + shadcn/ui
+- 📱 **Responsive** mobile-first
 
-### Outils et éditeurs  
-- BlogEditor, ListingEditor, ProfileEditor
-- ImageOptimizationDemo, QuickExportButton
-- NotificationSystem, PaymentModal
+### ✅ **Architecture**
+- 🔧 **Contextes** : Auth, Theme, Captcha
+- 🎛️ **Navigation** SPA avec routing interne
+- 📋 **Types TypeScript** complets
+- 🎨 **Design System** cohérent
 
-### Infrastructure
-- AuthContext, ThemeProvider, CaptchaContext
-- Navigation, Logo, ThemeToggle
-- Tous les composants UI shadcn/ui
+## 🔑 Comptes de test
+
+**Admin :**
+- Email : `admin@test.com`
+- Mot de passe : `password`
+
+**Utilisateur :**
+- Email : `user@test.com`
+- Mot de passe : `password`
+
+## 📁 Structure du projet
+
+```
+annuaire-bergerac/
+├── App.tsx                 # Point d'entrée principal
+├── components/             # Tous les composants React
+│   ├── ui/                # Composants shadcn/ui
+│   ├── *Simple.tsx        # Versions simplifiées
+│   └── *.tsx              # Composants complets
+├── styles/
+│   └── globals.css        # Styles Tailwind v4
+├── types/
+│   └── index.ts           # Types TypeScript
+├── hooks/                 # Hooks personnalisés
+├── utils/                 # Utilitaires
+└── docs/                  # Documentation
+```
+
+## 🎨 Personnalisation
+
+### **Thème et couleurs**
+Le thème est configuré dans `styles/globals.css` avec support complet light/dark.
+
+### **Composants**
+Tous les composants utilisent le design system Poppins + Tailwind v4.
+
+### **Navigation**
+Le routing est géré via `currentPage` state dans `App.tsx`.
+
+## 🚀 Déploiement
+
+### **Vercel (Recommandé)**
+```bash
+npm run build
+# Puis déployez le dossier dist/
+```
+
+### **Autres plateformes**
+Le projet est compatible avec tous les hébergeurs statiques.
+
+## 📞 Support
+
+- **Email** : contact@annuaire-bergerac.fr
+- **Localisation** : Bergerac, Dordogne (24)
 
 ---
 
-**Export AUTHENTIQUE depuis Annuaire Bergerac**  
-**47 composants réels exportés**
-**Timestamp: 2025-10-05T16:36:01.857Z**
-**Fait avec ❤️ à Bergerac, Dordogne**
+**🎉 Projet Annuaire Bergerac - Export complet 05/10/2025**
+**Fait avec ❤️ à Bergerac**

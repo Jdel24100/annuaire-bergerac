@@ -1,13 +1,13 @@
 {
   "name": "annuaire-bergerac",
   "version": "1.0.0",
-  "description": "Annuaire professionnel de Bergerac et ses environs",
+  "description": "Annuaire professionnel de Bergerac et ses environs (60km)",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext ts,tsx",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
@@ -51,8 +51,7 @@
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@types/node": "^20.0.0",
-    "@types/jszip": "^3.4.1",
+    "@types/node": "^20.5.2",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "@vitejs/plugin-react": "^4.3.0",
