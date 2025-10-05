@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:vercel": "chmod +x build-vercel.sh && ./build-vercel.sh",
+    "build:vercel": "vite build --config vite.config.vercel.ts",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx",
     "lint:fix": "eslint . --ext ts,tsx --fix",
