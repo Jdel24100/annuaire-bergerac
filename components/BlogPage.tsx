@@ -1,5 +1,5 @@
 // BlogPage - Composant Annuaire Bergerac
-// Export complet du 05/10/2025 11:37:58
+// Export complet du 05/10/2025 17:38:21
 
 import React from 'react';
 import { motion } from 'framer-motion';

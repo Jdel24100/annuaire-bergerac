@@ -1,6 +1,6 @@
 // shadcn/ui tabs.tsx
 // Configuré pour Annuaire Bergerac
-// Export du 05/10/2025 11:37:58
+// Export du 05/10/2025 17:38:21
 
 import React from 'react';
 import { cn } from './utils';

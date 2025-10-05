@@ -2,7 +2,7 @@
 
 > Annuaire professionnel spécialisé pour les entreprises de Bergerac et ses environs
 
-**Export COMPLET généré le 05/10/2025 11:37:58 depuis l'interface admin**
+**Export COMPLET généré le 05/10/2025 17:38:21 depuis l'interface admin**
 
 ## 🚀 Installation
 
@@ -56,5 +56,5 @@ vercel --prod
 ---
 
 **Export COMPLET depuis Annuaire Bergerac**  
-**Timestamp: 2025-10-05T09:37:58.296Z**
+**Timestamp: 2025-10-05T15:38:21.947Z**
 **Fait avec ❤️ à Bergerac, Dordogne**
