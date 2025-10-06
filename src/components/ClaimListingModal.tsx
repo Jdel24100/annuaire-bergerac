@@ -9,7 +9,7 @@ import { Badge } from './ui/badge';
 import { Alert, AlertDescription } from './ui/alert';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { useGoogleCaptcha } from './GoogleCaptcha';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { ProfessionalListing } from '../types';
 
 interface ClaimListingModalProps {

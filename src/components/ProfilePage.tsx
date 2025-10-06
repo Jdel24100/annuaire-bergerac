@@ -7,7 +7,7 @@ import { Badge } from './ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Separator } from './ui/separator';
 import { ProfileEditor } from './ProfileEditor';
-import { useAuth } from './AuthContext';
+import { useAuth } from './AuthContextSimple';
 import { Page } from '../types';
 
 interface ProfilePageProps {

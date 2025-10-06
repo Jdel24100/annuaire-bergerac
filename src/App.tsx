@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Loader2 } from 'lucide-react';
-import logoImage from 'figma:asset/be0284377c51854a19a1604873078c8100523aa3.png';
+// Logo en fallback texte pour production
+const logoImage = null;
 import { AuthProvider } from './components/AuthContextSimple';
 import { ThemeProvider } from './components/ThemeProviderSimple';
 import { NavigationSimpleFixed } from './components/NavigationSimpleFixed';
@@ -186,7 +187,7 @@ export default function App() {
         {showNavigation && (
           <NavigationSimpleFixed currentPage={currentPage} onNavigate={handleNavigate} />
         )}
-        <main className={showNavigation ? 'pt-0' : 'min-h-screen'}>
+        <main className={`generous-spacing generous-content ${showNavigation ? 'pt-0' : 'min-h-screen'}`}>
           <Suspense fallback={<PageLoader />}>
             <AnimatePresence mode="wait">
               <motion.div
@@ -204,16 +205,25 @@ export default function App() {
         
         {/* Footer - Style Figma */}
         {showFooter && (
-          <footer className="bg-muted/50 footer-spacing">
-            <div className="max-w-[1400px] mx-auto px-4 py-12">
-              <div className="grid md:grid-cols-4 gap-8">
+          <footer className="bg-muted/50 footer-spacing generous-padding">
+            <div className="max-w-[1400px] mx-auto px-6 py-16">
+              <div className="grid md:grid-cols-4 gap-12">
                 <div className="w-[318px]">
                   <div className="mb-4">
-                    <img 
-                      src={logoImage} 
-                      alt="Annuaire Bergerac" 
-                      className="h-12 w-auto"
-                    />
+                    {logoImage ? (
+                      <img 
+                        src={logoImage} 
+                        alt="Annuaire Bergerac" 
+                        className="h-12 w-auto"
+                      />
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-sm">
+                          <MapPin className="w-5 h-5 text-primary-foreground drop-shadow-sm" />
+                        </div>
+                        <span className="text-xl font-bold text-foreground">Annuaire Bergerac</span>
+                      </div>
+                    )}
                   </div>
                   <p className="font-['Poppins:Regular',_sans-serif] text-muted-foreground text-sm leading-5">
                     L'annuaire professionnel de référence à Bergerac. Trouvez facilement les meilleurs professionnels près de chez vous.
@@ -224,7 +234,7 @@ export default function App() {
                   <h4 className="font-['Poppins:SemiBold',_sans-serif] text-foreground text-lg leading-7 mb-4">
                     Liens rapides
                   </h4>
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     <button 
                       onClick={() => handleNavigate('home')}
                       className="block font-['Poppins:Regular',_sans-serif] text-muted-foreground text-base leading-6 hover:text-foreground transition-colors"
@@ -262,7 +272,7 @@ export default function App() {
                   <h4 className="font-['Poppins:SemiBold',_sans-serif] text-foreground text-lg leading-7 mb-4">
                     Légal & Infos
                   </h4>
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     <button 
                       onClick={() => handleNavigate('about')}
                       className="block font-['Poppins:Regular',_sans-serif] text-muted-foreground text-base leading-6 hover:text-foreground transition-colors text-left"
@@ -328,7 +338,7 @@ export default function App() {
                 </div>
               </div>
               
-              <div className="border-t border-border mt-8 pt-8">
+              <div className="border-t border-border mt-12 pt-12">
                 <div className="text-center">
                   <p className="font-['Poppins:Regular',_sans-serif] text-muted-foreground text-sm leading-5">
                     © 2025 Annuaire Bergerac. Tous droits réservés.

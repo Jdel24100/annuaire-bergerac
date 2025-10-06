@@ -8,10 +8,8 @@ import { ThemeToggle } from './ThemeToggle';
 import { useAuth } from './AuthContextSimple';
 import { Page } from '../types';
 
-// Import logo avec fallback robuste
-import logoImageImport from 'figma:asset/be0284377c51854a19a1604873078c8100523aa3.png';
-
-const logoImage = logoImageImport || '';
+// Logo fallback pour production
+const logoImage = null;
 
 interface NavigationSimpleFixedProps {
   currentPage: Page;
