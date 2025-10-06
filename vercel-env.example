@@ -1,0 +1,17 @@
+# Variables d'environnement pour Vercel
+# À configurer dans le dashboard Vercel
+
+# SUPABASE - OBLIGATOIRE
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+
+# RECAPTCHA - OPTIONNEL
+VITE_RECAPTCHA_SITE_KEY=your-recaptcha-site-key
+
+# GOOGLE OAUTH - OPTIONNEL  
+VITE_GOOGLE_CLIENT_ID=your-google-client-id
+
+# Variables pour les Edge Functions (côté serveur)
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+SUPABASE_ANON_KEY=your-anon-key

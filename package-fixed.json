@@ -6,26 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:vercel": "vite build --config vite.config.vercel.ts",
     "preview": "vite preview",
-    "lint": "eslint . --ext ts,tsx",
-    "lint:fix": "eslint . --ext ts,tsx --fix",
-    "type-check": "tsc --noEmit --skipLibCheck",
-    "cleanup": "rm -rf node_modules package-lock.json && npm install",
-    "deploy": "vite build",
+    "test-build": "node test-build.js",
     "setup": "npm install",
     "update": "npm update",
     "export": "chmod +x export-all.sh && ./export-all.sh",
     "export:direct": "chmod +x export-direct.sh && ./export-direct.sh",
     "export:light": "chmod +x export-light.sh && ./export-light.sh",
-    "export:vercel": "chmod +x export-vercel.sh && ./export-vercel.sh",
-    "vercel:check": "node vercel-check.js",
-    "vercel:build": "chmod +x build-vercel.sh && ./build-vercel.sh"
+    "export:vercel": "chmod +x export-vercel.sh && ./export-vercel.sh"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "motion": "^10.18.0",
+    "framer-motion": "^10.18.0",
     "lucide-react": "^0.263.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.4",
@@ -47,12 +40,12 @@
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-tabs": "^1.0.4",
-    "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "tailwindcss-animate": "^1.0.7",
     "tailwind-merge": "^1.14.0",
     "sonner": "^1.0.3",
     "react-hook-form": "^7.45.4",
@@ -73,29 +66,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "typescript": "^5.0.2",
-    "vite": "^5.0.0",
-    "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0"
+    "vite": "^5.4.0",
+    "@tailwindcss/vite": "4.0.0-alpha.15"
   },
   "engines": {
-    "node": "18.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Jdel24100/annuaire-bergerac.git"
-  },
-  "keywords": [
-    "annuaire",
-    "bergerac",
-    "dordogne",
-    "entreprises",
-    "professionnels",
-    "react",
-    "typescript",
-    "supabase"
-  ],
-  "author": "JD Creation Web",
-  "license": "UNLICENSED",
-  "private": true
+    "node": ">=18.0.0"
+  }
 }
