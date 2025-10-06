@@ -4,7 +4,7 @@ import { MapPin, Loader2 } from 'lucide-react';
 import logoImage from 'figma:asset/be0284377c51854a19a1604873078c8100523aa3.png';
 import { AuthProvider } from './components/AuthContextSimple';
 import { ThemeProvider } from './components/ThemeProviderSimple';
-import { Navigation } from './components/NavigationSimple';
+import { NavigationSimpleFixed } from './components/NavigationSimpleFixed';
 import { Page } from './types';
 
 // Lazy loading des composants de pages pour optimiser les performances
@@ -14,7 +14,7 @@ const DirectoryPage = React.lazy(() => import('./components/DirectoryPage').then
 const SearchPage = React.lazy(() => import('./components/SearchPage').then(m => ({ default: m.SearchPage })));
 const DashboardPage = React.lazy(() => import('./components/DashboardPageSimple').then(m => ({ default: m.DashboardPage })));
 const AdminPage = React.lazy(() => import('./components/AdminPage').then(m => ({ default: m.AdminPage })));
-const PricingPage = React.lazy(() => import('./components/PricingPage').then(m => ({ default: m.PricingPage })));
+const PricingPage = React.lazy(() => import('./components/PricingPageStripe').then(m => ({ default: m.PricingPageStripe })));
 const TrashPage = React.lazy(() => import('./components/TrashPage').then(m => ({ default: m.TrashPage })));
 const AuthPages = React.lazy(() => import('./components/AuthPagesSimple').then(m => ({ default: m.AuthPages })));
 const BlogEditor = React.lazy(() => import('./components/BlogEditorSimple').then(m => ({ default: m.BlogEditor })));
@@ -184,7 +184,7 @@ export default function App() {
       <AuthProvider>
         <div className="min-h-screen bg-background">
         {showNavigation && (
-          <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
+          <NavigationSimpleFixed currentPage={currentPage} onNavigate={handleNavigate} />
         )}
         <main className={showNavigation ? 'pt-0' : 'min-h-screen'}>
           <Suspense fallback={<PageLoader />}>
