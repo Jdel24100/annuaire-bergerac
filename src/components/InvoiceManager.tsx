@@ -4,7 +4,7 @@ import {
   Search, Plus, CheckCircle, XCircle, Clock, AlertCircle,
   User, CreditCard, Building, Mail, MapPin, Hash
 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';

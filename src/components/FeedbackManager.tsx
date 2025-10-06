@@ -4,7 +4,7 @@ import {
   CheckCircle, Clock, AlertTriangle, XCircle, User, Calendar,
   FileText, Image as ImageIcon, ExternalLink, ArrowUpDown
 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';

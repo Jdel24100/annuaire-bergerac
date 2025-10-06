@@ -16,7 +16,7 @@ export default defineConfig({
     include: [
       'react',
       'react-dom',
-      'framer-motion',
+      'motion/react',
       'lucide-react',
       '@supabase/supabase-js'
     ],
@@ -30,11 +30,38 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          motion: ['framer-motion'],
-          icons: ['lucide-react'],
-          supabase: ['@supabase/supabase-js']
+        manualChunks: (id) => {
+          // Vendor chunks optimisés
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('motion/react') || id.includes('motion-dom')) {
+              return 'vendor-motion';
+            }
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+            if (id.includes('@radix-ui')) {
+              return 'vendor-ui';
+            }
+            if (id.includes('@supabase')) {
+              return 'vendor-supabase';
+            }
+            return 'vendor-misc';
+          }
+          
+          // Code splitting pour les pages
+          if (id.includes('components/HomePage')) return 'page-home';
+          if (id.includes('components/AdminPage')) return 'page-admin';
+          if (id.includes('components/DashboardPage')) return 'page-dashboard';
+          if (id.includes('components/BlogPage')) return 'page-blog';
+          
+          // UI components
+          if (id.includes('components/ui/')) return 'ui-components';
+          
+          // Utils
+          if (id.includes('utils/') || id.includes('hooks/')) return 'utils';
         },
         chunkFileNames: 'assets/[name].[hash].js',
         entryFileNames: 'assets/[name].[hash].js',

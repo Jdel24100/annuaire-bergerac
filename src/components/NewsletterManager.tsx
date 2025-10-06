@@ -4,7 +4,7 @@ import {
   Plus, Edit, Trash2, Eye, CheckCircle, XCircle, Clock,
   Filter, Search, BarChart3, TrendingUp, UserPlus, UserMinus
 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';

@@ -2,33 +2,25 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './styles/globals.css'
-import './styles/fallback.css'
 
 // Vérification de l'environnement et configuration
 const isDevelopment = import.meta.env.DEV;
 const isProduction = import.meta.env.PROD;
 
-// Log de démarrage en développement
-if (isDevelopment) {
-  console.log('🚀 Annuaire Bergerac - Mode développement');
-  console.log('Environment:', {
-    NODE_ENV: import.meta.env.MODE,
-    SUPABASE_URL: import.meta.env.VITE_SUPABASE_URL ? '✅ Configuré' : '❌ Manquant',
-    SUPABASE_KEY: import.meta.env.VITE_SUPABASE_ANON_KEY ? '✅ Configuré' : '❌ Manquant',
-  });
-}
-
 // Configuration pour la production
 if (isProduction) {
-  console.log('📦 Annuaire Bergerac - Mode production');
+  console.log('📦 Annuaire Bergerac - Production');
   
   // Désactiver les logs console en production (sauf erreurs)
   if (!import.meta.env.VITE_DEBUG) {
     console.log = () => {};
     console.info = () => {};
     console.warn = () => {};
+    console.debug = () => {};
   }
 }
+
+// Démarrage silencieux en production
 
 // Gestion d'erreur globale
 window.addEventListener('error', (event) => {

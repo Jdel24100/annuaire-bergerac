@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowLeft, Heart, MapPin, Users, Target, Lightbulb, Mail, Coffee } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowLeft, Save, Eye, Image, Hash, Folder, Calendar, Globe } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';

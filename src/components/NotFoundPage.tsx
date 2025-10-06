@@ -1,6 +1,6 @@
 import React from 'react';
 import { Home, Search, AlertTriangle, RefreshCw, Mail, Send, ArrowLeft } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';

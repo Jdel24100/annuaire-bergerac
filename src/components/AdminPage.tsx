@@ -23,6 +23,9 @@ import { OrganizedDatabaseBrowser } from './OrganizedDatabaseBrowser';
 // import { GitSyncManager } from './GitSyncManager';
 import { SystemStatus } from './SystemStatus';
 import { AdminNotificationCenter } from './AdminNotificationCenter';
+import { ProductionSync } from './ProductionSync';
+import { GoogleDataValidator } from './GoogleDataValidator';
+import { DataStructureValidator } from './DataStructureValidator';
 
 interface AdminPageProps {
   onNavigate: (page: string, params?: any) => void;
@@ -113,6 +116,9 @@ export function AdminPage({ onNavigate }: AdminPageProps) {
     { id: 'invoices', label: 'Facturation', icon: CreditCard, category: 'Business' },
     
     // 🔧 OUTILS & MAINTENANCE
+    { id: 'production-sync', label: 'Sync Production', icon: Database, category: 'Outils' },
+    { id: 'google-validation', label: 'Validation Google', icon: MapPin, category: 'Outils' },
+    { id: 'data-structure', label: 'Structure Données', icon: Database, category: 'Outils' },
     { id: 'images', label: 'Optimisation Images', icon: ImageIcon, category: 'Outils' },
     { id: 'git', label: 'Synchronisation Git', icon: Github, category: 'Outils' },
     { id: 'export', label: 'Export & Téléchargement', icon: Download, category: 'Outils' },
@@ -343,6 +349,9 @@ export function AdminPage({ onNavigate }: AdminPageProps) {
           </div>
         </div>
       )}
+      {activeTab === 'production-sync' && <ProductionSync onNavigate={onNavigate} />}
+      {activeTab === 'google-validation' && <GoogleDataValidator onNavigate={onNavigate} />}
+      {activeTab === 'data-structure' && <DataStructureValidator />}
       {activeTab === 'export' && <UnifiedExportManager />}
       {activeTab === 'archive' && <DownloadCompleteProject />}
       {activeTab === 'database' && <OrganizedDatabaseBrowser onNavigate={onNavigate} />}

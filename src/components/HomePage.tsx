@@ -1,15 +1,21 @@
 import React from 'react';
 import { Search, MapPin, BookOpen, Star, TrendingUp, Users, Zap, UtensilsCrossed, Heart, Hammer, ShoppingBag, Camera, Briefcase } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
+import { SponsoredListings } from './SponsoredListings';
+import { 
+  HomepageRectangleAd, 
+  HomepageLeaderboardAd 
+} from './ads/GoogleAdsPositions';
 import { mockBlogArticles, mockListings, categories } from './mockData';
 import { Page, HomePageStats } from '../types';
-import { Logo } from './Logo';
+
 import { AdBanner } from './AdBanner';
-import { DevModeInfo } from './DevModeInfo';
+
+import heroBackgroundImage from 'figma:asset/2860210c6c0cf218cd51dcbc3e09864129f8841b.png';
 
 interface HomePageProps {
   onNavigate: (page: Page, params?: any) => void;
@@ -70,16 +76,18 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section - Style Figma */}
-      <section className="relative overflow-clip px-4 sm:px-6 lg:px-8 py-20">
+      <section className="relative overflow-clip hero-section">
+        {/* Image de fond avec professionnels */}
+        <div 
+          className="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+        />
+        {/* Overlay pour meilleur contraste */}
+        <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-background/40 to-background/60" />
+        {/* Overlay gradient coloré */}
         <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#2563eb] to-[#9333ea]" />
         <div className="relative max-w-[896px] mx-auto">
-          {/* Logo en en-tête du hero */}
-          <div className="text-center mb-8">
-            <Logo variant="full" size="lg" className="mx-auto mb-6" />
-          </div>
 
-          {/* Info mode développement */}
-          <DevModeInfo />
           
           <div className="text-center mb-6">
             <h1 className="font-['Poppins:Bold',_sans-serif] text-foreground mb-4">
@@ -195,14 +203,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
               );
             })}
             
-            {/* Encart publicitaire dans la grille */}
+            {/* Google Ads Rectangle dans la grille */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: categories.length * 0.1 }}
               className="col-span-2 md:col-span-2"
             >
-              <AdBanner size="rectangle" className="h-[152px] w-full" />
+              <HomepageRectangleAd className="h-[250px] w-full flex items-center justify-center" />
             </motion.div>
           </div>
         </div>
@@ -260,7 +268,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                           {listing.location.city}
                         </span>
                       </div>
-                      <div className="text-xs text-[#64748b]">
+                      <div className="text-xs text-[#64748b] mx-[0px] my-[15px]">
                         {listing.subCategory || listing.category}
                       </div>
                     </div>
@@ -333,6 +341,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      {/* Sponsored Listings Section */}
+      <SponsoredListings 
+        onNavigate={onNavigate}
+        title="Entreprises Premium à Bergerac"
+        subtitle="Découvrez les meilleures entreprises qui font confiance à notre plateforme"
+        count={6}
+        showViewAll={true}
+      />
 
       {/* Section SEO - Pourquoi choisir Bergerac */}
       <section className="bg-[rgba(255,255,255,0.9)] px-4 sm:px-6 lg:px-8 py-16">
@@ -409,10 +426,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* Section Publicité */}
-      <section className="px-4 sm:px-6 lg:px-8 py-8">
+      {/* Google Ads Leaderboard */}
+      <section className="px-4 sm:px-6 lg:px-8 py-8 bg-muted/30">
         <div className="max-w-[1200px] mx-auto text-center">
-          <AdBanner size="leaderboard" className="mx-auto" />
+          <HomepageLeaderboardAd className="mx-auto" />
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, X, User, LogOut, Settings, BookOpen, MapPin, Search, Home, ChevronDown, UtensilsCrossed, Heart, Hammer, ShoppingBag, Camera, Briefcase, Mail, Plus } from 'lucide-react';
+import logoImage from 'figma:asset/be0284377c51854a19a1604873078c8100523aa3.png';
 import { Button } from './ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from './ui/sheet';
@@ -56,23 +57,23 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-[1400px] mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button
-            onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-          >
-            <div className="relative w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold">Annuaire Bergerac</h1>
-              <p className="text-xs text-muted-foreground -mt-1">Professionnel de référence</p>
-            </div>
-          </button>
+          <div className="flex items-center">
+            <button
+              onClick={() => handleNavClick('home')}
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity mr-8"
+            >
+              <img 
+                src={logoImage} 
+                alt="Annuaire Bergerac" 
+                className="h-10 w-auto"
+              />
+            </button>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation - Section centrale */}
+          <nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
             <button
               onClick={() => handleNavClick('home')}
               className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
@@ -182,7 +183,7 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           </nav>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <ThemeToggle />
             
             {/* Status system pour les admins */}

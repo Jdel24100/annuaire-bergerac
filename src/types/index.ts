@@ -194,6 +194,9 @@ export interface DaySchedule {
   breakEnd?: string;
 }
 
+// Re-export types from ranking module
+export type { RankingOptions, RankedListing } from './ranking';
+
 export interface SubscriptionPlan {
   id: string;
   name: string;

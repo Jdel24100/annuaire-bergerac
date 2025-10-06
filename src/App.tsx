@@ -1,33 +1,67 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin } from 'lucide-react';
+import React, { Suspense } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { MapPin, Loader2 } from 'lucide-react';
+import logoImage from 'figma:asset/be0284377c51854a19a1604873078c8100523aa3.png';
 import { AuthProvider } from './components/AuthContextSimple';
 import { ThemeProvider } from './components/ThemeProviderSimple';
 import { Navigation } from './components/NavigationSimple';
-import { HomePage } from './components/HomePage';
-import { BlogPage } from './components/BlogPageSimple';
-import { DirectoryPage } from './components/DirectoryPage';
-import { SearchPage } from './components/SearchPage';
-import { DashboardPage } from './components/DashboardPageSimple';
-import { AdminPage } from './components/AdminPage';
-import { PricingPage } from './components/PricingPage';
-import { TrashPage } from './components/TrashPage';
-import { AuthPages } from './components/AuthPagesSimple';
-import { BlogEditor } from './components/BlogEditorSimple';
-import { ContactPage } from './components/ContactPage';
-import { LegalPages } from './components/LegalPages';
-import { AboutPage } from './components/AboutPage';
-import { ListingEditor } from './components/ListingEditor';
-import { NotFoundPage } from './components/NotFoundPage';
-import { StyleDiagnostic } from './components/StyleDiagnostic';
-import { ProfilePage } from './components/ProfilePage';
-import { DebugPage } from './components/DebugPage';
 import { Page } from './types';
+
+// Lazy loading des composants de pages pour optimiser les performances
+const HomePage = React.lazy(() => import('./components/HomePage').then(m => ({ default: m.HomePage })));
+const BlogPage = React.lazy(() => import('./components/BlogPageFixed').then(m => ({ default: m.BlogPageFixed })));
+const DirectoryPage = React.lazy(() => import('./components/DirectoryPage').then(m => ({ default: m.DirectoryPage })));
+const SearchPage = React.lazy(() => import('./components/SearchPage').then(m => ({ default: m.SearchPage })));
+const DashboardPage = React.lazy(() => import('./components/DashboardPageSimple').then(m => ({ default: m.DashboardPage })));
+const AdminPage = React.lazy(() => import('./components/AdminPage').then(m => ({ default: m.AdminPage })));
+const PricingPage = React.lazy(() => import('./components/PricingPage').then(m => ({ default: m.PricingPage })));
+const TrashPage = React.lazy(() => import('./components/TrashPage').then(m => ({ default: m.TrashPage })));
+const AuthPages = React.lazy(() => import('./components/AuthPagesSimple').then(m => ({ default: m.AuthPages })));
+const BlogEditor = React.lazy(() => import('./components/BlogEditorSimple').then(m => ({ default: m.BlogEditor })));
+const ContactPage = React.lazy(() => import('./components/ContactPage').then(m => ({ default: m.ContactPage })));
+const LegalPages = React.lazy(() => import('./components/LegalPages').then(m => ({ default: m.LegalPages })));
+const AboutPage = React.lazy(() => import('./components/AboutPage').then(m => ({ default: m.AboutPage })));
+const ListingEditor = React.lazy(() => import('./components/ListingEditor').then(m => ({ default: m.ListingEditor })));
+const NotFoundPage = React.lazy(() => import('./components/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
+const ProfilePage = React.lazy(() => import('./components/ProfilePage').then(m => ({ default: m.ProfilePage })));
+
+// Composant de chargement optimisé
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="flex flex-col items-center space-y-4">
+      <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      <p className="text-sm text-muted-foreground">Chargement...</p>
+    </div>
+  </div>
+);
 
 export default function App() {
   const [currentPage, setCurrentPage] = React.useState<Page>('home');
   const [pageParams, setPageParams] = React.useState<any>(null);
   const [hasError, setHasError] = React.useState(false);
+  
+  // Précharger les composants critiques après le premier rendu
+  React.useEffect(() => {
+    // Précharger SearchPage et DirectoryPage qui sont souvent utilisés
+    const preloadCriticalPages = async () => {
+      try {
+        if (currentPage === 'home') {
+          // Précharger en arrière-plan après 2 secondes
+          setTimeout(async () => {
+            const [SearchPageModule, DirectoryPageModule] = await Promise.all([
+              import('./components/SearchPage'),
+              import('./components/DirectoryPage')
+            ]);
+          }, 2000);
+        }
+      } catch (error) {
+        // Ignoré - le préchargement est optionnel
+        console.debug('Préchargement ignoré:', error);
+      }
+    };
+    
+    preloadCriticalPages();
+  }, [currentPage]);
 
   const handleNavigate = (page: Page, params?: any) => {
     try {
@@ -123,17 +157,11 @@ export default function App() {
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
       
-      case 'style-diagnostic':
-        return <StyleDiagnostic />;
-      
       case 'listing-editor':
         return <ListingEditor onNavigate={handleNavigate} listingId={pageParams?.id} />;
       
       case 'profile':
         return <ProfilePage onNavigate={handleNavigate} />;
-      
-      case 'debug':
-        return <DebugPage onNavigate={handleNavigate} />;
       
       case '404':
         return <NotFoundPage onNavigate={handleNavigate} requestedPath={pageParams?.path} />;
@@ -158,33 +186,34 @@ export default function App() {
         {showNavigation && (
           <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
         )}
-        <main className={showNavigation ? '' : 'min-h-screen'}>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentPage}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              {renderCurrentPage()}
-            </motion.div>
-          </AnimatePresence>
+        <main className={showNavigation ? 'pt-0' : 'min-h-screen'}>
+          <Suspense fallback={<PageLoader />}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentPage}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                {renderCurrentPage()}
+              </motion.div>
+            </AnimatePresence>
+          </Suspense>
         </main>
         
         {/* Footer - Style Figma */}
         {showFooter && (
-          <footer className="bg-muted/50 mt-20">
+          <footer className="bg-muted/50 footer-spacing">
             <div className="max-w-[1400px] mx-auto px-4 py-12">
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="w-[318px]">
                   <div className="mb-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                        <MapPin className="w-5 h-5 text-primary-foreground" />
-                      </div>
-                      <span className="text-xl font-bold text-foreground">Annuaire Bergerac</span>
-                    </div>
+                    <img 
+                      src={logoImage} 
+                      alt="Annuaire Bergerac" 
+                      className="h-12 w-auto"
+                    />
                   </div>
                   <p className="font-['Poppins:Regular',_sans-serif] text-muted-foreground text-sm leading-5">
                     L'annuaire professionnel de référence à Bergerac. Trouvez facilement les meilleurs professionnels près de chez vous.

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { useAuth } from './AuthContextSimple';
 import { Page } from '../types';
+import { BlogBannerAd, BlogSidebarAd } from './ads/GoogleAdsPositions';
 
 interface BlogPageSimpleProps {
   onNavigate: (page: Page, params?: any) => void;
@@ -195,8 +196,16 @@ export function BlogPage({ onNavigate, articleId }: BlogPageSimpleProps) {
             <h2 className="text-2xl font-bold">Articles récents</h2>
             
             <div className="space-y-6">
-              {mockArticles.map((article) => (
-                <Card key={article.id} className="hover:shadow-lg transition-shadow">
+              {mockArticles.map((article, index) => (
+                <React.Fragment key={article.id}>
+                  {/* Google Ads entre les articles tous les 3 articles */}
+                  {index > 0 && index % 3 === 0 && (
+                    <div className="my-8">
+                      <BlogBannerAd />
+                    </div>
+                  )}
+                  
+                <Card className="hover:shadow-lg transition-shadow">
                   <div className="md:flex">
                     <img
                       src={article.image}
@@ -243,7 +252,7 @@ export function BlogPage({ onNavigate, articleId }: BlogPageSimpleProps) {
               {mockFAQ.map((faq, index) => (
                 <Card key={index}>
                   <CardHeader>
-                    <CardTitle className="text-base">{faq.question}</CardTitle>
+ Title className="text-base">{faq.question}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-muted-foreground">{faq.answer}</p>
